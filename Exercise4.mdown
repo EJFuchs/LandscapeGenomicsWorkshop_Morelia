@@ -85,32 +85,36 @@ Now that we know climate significantly explains genetic variation, even after co
 
 
 ####Useful links
-Oksanen J. vegan: Community Ecology Package. http://cran.r-project.org/web/packages/vegan/index.html 
+Oksanen J. [vegan: Community Ecology Package.](http://cran.r-project.org/web/packages/vegan/index.html) 
 
-Oksanen J (2012) Constrained ordination: tutorial with R and vegan. http://cc.oulu.fi/~jarioksa/opetus/metodi/sessio2.pdf
+Oksanen J (2012) [Constrained ordination: tutorial with R and vegan.](http://cc.oulu.fi/~jarioksa/opetus/metodi/sessio2.pdf)
 
-Oksanen J (2012) vegan: an Introduction to Ordination. http://cran.r-project.org/web/packages/vegan/vignettes/intro-vegan.pdf 
+Oksanen J (2012) [vegan: an Introduction to Ordination.](http://cran.r-project.org/web/packages/vegan/vignettes/intro-vegan.pdf)
 
-Oksanen J, Blanchet FG, Kindt R, Legendre P, Minchin PR, O'Hara RB, Simpson GL, Solymos P, Stevens MHH, Wagner, H (2012) Package 'vegan.' http://cran.r-project.org/web/packages/vegan/vegan.pdf 
+Oksanen J, Blanchet FG, Kindt R, Legendre P, Minchin PR, O'Hara RB, Simpson GL, Solymos P, Stevens MHH, Wagner, H (2012) [Package 'vegan.'](http://cran.r-project.org/web/packages/vegan/vegan.pdf) 
 
-Palmer M. Variance explained and variance partitioning in CCA. http://ordination.okstate.edu/varpar.html
+Palmer M. [Ordination Methods for Ecologists.](http://ordination.okstate.edu/)
+
+Palmer M. [Variance explained and variance partitioning in CCA.](http://ordination.okstate.edu/varpar.html)
 
 ####Useful references
-Borcard D, Legendre P, Drapeau P (1992) Partialling out the spatial component of ecological variation. Ecology 73, 1045-1055.
+Borcard D, Legendre P, Drapeau P (1992) Partialling out the spatial component of ecological variation. *Ecology* 73, 1045-1055.
 
-Gugger PF, Ikegami M, Sork VL (2013) Influence of late Quaternary climate change on present patterns of genetic variation in valley oak, Quercus lobata Nee. Molecular Ecology 22, 3598-3612.
+Bradburd GS, Ralph PL, Coop GM (2013) Disentangling the effects of geographic and ecological isolation on genetic differentiation. *Evolution* 67, 3258-3273.
 
-Legendre P, Legendre L (1998) Numerical ecology, 2nd English edn. Elsevier, Amsterdam.
+Gugger PF, Ikegami M, Sork VL (2013) Influence of late Quaternary climate change on present patterns of genetic variation in valley oak, *Quercus lobata* Nee. *Molecular Ecology* 22, 3598-3612.
 
-Liu Q (1997) Variation partitioning by partial redundancy analysis (RDA). Environmetrics 8, 75-85.
+Legendre P, Legendre L (1998) *Numerical ecology*, 2nd English edn. Elsevier, Amsterdam.
 
-Okland RH (1999) On the variation explained by ordination and constrained ordination axes. Journal of Vegetation Science 10, 131-136.
+Liu Q (1997) Variation partitioning by partial redundancy analysis (RDA). *Environmetrics* 8, 75-85.
 
-Peres-Neto PR, Legendre P (2010) Estimating and controlling for spatial structure in the study of ecological communities. Global Ecology and Biogeography 19, 174-184.
+Okland RH (1999) On the variation explained by ordination and constrained ordination axes. *Journal of Vegetation Science* 10, 131-136.
 
-Smouse PE, Williams RC (1982) Multivariate analysis of HLA-disease associations. Biometrics 38, 757-768.
+Peres-Neto PR, Legendre P (2010) Estimating and controlling for spatial structure in the study of ecological communities. *Global Ecology and Biogeography* 19, 174-184.
 
-Westfall RD, Conkle MT (1992) Allozyme markers in breeding zone designation. Population Genetics of Forest Trees 42, 279-309.
+Smouse PE, Williams RC (1982) Multivariate analysis of HLA-disease associations. *Biometrics* 38, 757-768.
+
+Westfall RD, Conkle MT (1992) Allozyme markers in breeding zone designation. *Population Genetics of Forest Trees* 42, 279-309.
 
 
 ###Linear mixed model (EMMAX)
@@ -130,7 +134,7 @@ Here, we will instead use this approach as a means of testing for SNPs under sel
 
 		emmax-kin -v allSNPs
 
-	allSNPs is the prefix of the TPED file I created for you. This will generate `allSNPs.aBN.kinf`, which is a matrix of pairwise kinship according the Balding-Nichols method of estimating kinship. Alternatively, you could estimate kinship by calculating the proportion of loci identical by state by adding the flag -s.  
+	allSNPs is the prefix of the TPED file I created for you. This will generate `allSNPs.aBN.kinf`, which is a matrix of pairwise kinship according the Balding-Nichols method of estimating kinship. Alternatively, you could estimate kinship by calculating the proportion of loci identical by state by adding `-s`.  
 
 		emmax-kin -v -s allSNPs
 
@@ -147,13 +151,13 @@ Here, we will instead use this approach as a means of testing for SNPs under sel
 
 	I ran growing season precipitation (gsp) but you can choose another climate variable if you like. `testSNPs.tped` only contains SNPs whose minor allele frequency is greater than 10 %. There are two reasons: 1) if a very rare allele in say one individual drives the correlation with climate, then it is uninteresting, and 2) by focusing only on tests of potential interest we gain statistical power after accounting for multiple testing.
 	
-4. Output files: The three output files include a log of what was printed to screen (.log), a file summarizing variance components and including a "pseudoheritability" estimate in the last line (.reml), and a file with the list of tested SNPs, the B values, the standard error of B, and their P-values (.ps). The latter file indicates which individuals SNPs are significantly associated with climate after accounting for kinship. We will largely ignore the other output file, but it is worth mentioning that the "pseudoheritablity" is the proportion of phenotypic, or here climate, variance explained by the relatedness among samples (*i.e.* the kinship matrix) (usually high in this analysis with climate).
+4. Output files: The three output files include a log of what was printed to screen (.log), a file summarizing variance components and including a "pseudoheritability" estimate in the last line (.reml), and a file with the list of tested SNPs, the beta values, the standard error of beta, and their *P*-values (.ps). The latter file indicates which individuals SNPs are significantly associated with climate after accounting for kinship. We will largely ignore the other output file, but it is worth mentioning that the "pseudoheritablity" is the proportion of phenotypic, or here climate, variance explained by the relatedness among samples (*i.e.* the kinship matrix) (usually high in this analysis with climate).
 	
 5. Multiple testing: Because we did so many statistical tests, we need to correct for multiple testing before drawing any conclusion from the *P*-values. One common way is using the false discovery rate (FDR) method, which is simply executed in Q-VALUE in R/Bioconductor. 
 
 		cut -f 4 GSP.ps | Rscript -e 'library(qvalue); p<-scan("stdin"); qobj<-qvalue(p); write.qvalue(qobj,file="Qvals.txt")'
 
-	A list of *Q*-values are given alongside the P-values in the same order they were input. Let's consider a Q < 0.05 significant. See how many are significant by sorting the file by *Q*-value.
+	A list of *Q*-values are given alongside the *P*-values in the same order they were input. Let's consider a *Q* < 0.05 significant. See how many are significant by sorting the file by *Q*-value.
 
 		sort -nk2 Qvals.txt | less 
 	
@@ -162,20 +166,20 @@ Now that we have a list of candidate SNPs under selection by climate, we can fur
 
 ####Useful references
 Coop G, Witonsky D, Di Rienzo A, Pritchard JK (2010) Using environmental correlations to identify 
-loci underlying local adaptation. Genetics 185, 1411-1423.
+loci underlying local adaptation. *Genetics* 185, 1411-1423.
 
-Gunther T, Goop G (2013) Robust identification of local adaptation from allele frequencies. Genetics 195, 205-220.
+Gunther T, Goop G (2013) Robust identification of local adaptation from allele frequencies. *Genetics* 195, 205-220.
 
 Kang HM, Sul JH, Service SK, Zaitlen NA, Kong S-Y, Freimer NM, Sabatti C, Eskin E (2010) Variance 
-component model to account for sample structure in genome-wide association studies. Nature Genetics 42, 348-354.
+component model to account for sample structure in genome-wide association studies. *Nature Genetics* 42, 348-354.
 
 Kang HM, Zaitlen NA, Wade CM, Kirby A, Heckerman D, Daly MJ, Eskin E (2008) Efficient control 
-of population structure in model organism association mapping. Genetics 178, 1709-1723.
+of population structure in model organism association mapping. *Genetics* 178, 1709-1723.
 
-Storey JD, Tibshirani R (2003) Statistical significance for genomewide studies. Proceedings of the 
-National Academy of Sciences of the United States of America 100, 9440-9445.
+Storey JD, Tibshirani R (2003) Statistical significance for genomewide studies. *Proceedings of the 
+National Academy of Sciences of the United States of America* 100, 9440-9445.
 
-Yoder JB, Stanton-Geddes J, Zhou P, et al. (2014) Genomic signature of adaptation to climate in Medicago truncatula. Genetics 196, 1263-1275.
+Yoder JB, Stanton-Geddes J, Zhou P, et al. (2014) Genomic signature of adaptation to climate in *Medicago truncatula*. *Genetics* 196, 1263-1275.
 
 Zhou X, Stephens M (2012) Genome-wide efficient mixed-model analysis for association studies. 
-Nature Genetics 44, 821-824.
+*Nature Genetics* 44, 821-824.
