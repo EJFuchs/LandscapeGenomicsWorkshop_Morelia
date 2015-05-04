@@ -249,6 +249,7 @@ Try it on your own before reading my version below.
 	
 	#8. RUN POPULATIONS
 	populations -P ${COR_OUT}/ -M ~/Desktop/GBS_Data/popmap -t 2 -r 0.9 -b $1 -s --lnl_lim -10 --fasta --plink --structure
+	populations -P ${OUT}/ -M ~/Desktop/GBS_Data/popmap -t 2 -r 0.9 -b $1 -s --lnl_lim -10 --fasta --plink --structure
 	
 	#8A. RUN PLINK (MDS and PCA)
 	cd ${OUT}/

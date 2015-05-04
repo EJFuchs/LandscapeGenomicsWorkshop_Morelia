@@ -29,7 +29,7 @@ List the files to see how big they are. If you don't know how to show the file s
 
 Now make a directory to put the FASTQ files in: `mkdir FASTQ`. Finally, we are ready to convert from QSEQ to FASTQ. Note that for some programs it is useful to combine all the files into one large data file (`cat *.txt > alldata.qseq`), but we don't need to do that today.
 
-	qseq2fastq.pl s_3_1_1101_qseq.txt.gz FASTQ/s_3_1_1101.fq
+	qseq2fastq.pl s_3_1_1101_qseq.txt FASTQ/s_3_1_1101.fq
 
 This will take a while. In the meantime, you can open another Terminal and run the other file too.
 
