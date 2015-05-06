@@ -10,7 +10,7 @@ In the previous exercise, I presented the basic pipeline with the minimal argume
 Open the [webpage](http://creskolab.uoregon.edu/stacks/comp/ustacks.php) for `ustacks` and browse through the options. Here are some that I like to include when running `ustacks`:
 
 * `-r` to remove highly repetetive stacks
-* `-d` to resolove overmerged stacks
+* `-d` to resolve overmerged stacks
 * `--max_locus_stacks` to define the maximum number of stacks that can be merged into a locus
 * `--model_type bounded` and `--bound_high` to use a more reasonable model of sequencing error with a maximum rate around 0.01 to 0.10.
 
@@ -35,7 +35,7 @@ Then there are a few options about how to report summary statistics that I do no
 
 Here is how the new `populations` command might look:
 
-	populations -P ~/Desktop/GBS_Data/Stacks_Output/ -M ~/Desktop/GBS_Data/dpopmap -t 2 -r 0.8 -p 2 -b 1 -s --lnl_lim -10 --fasta --plink --structure
+	populations -P ~/Desktop/GBS_Data/Stacks_Output/ -M ~/Desktop/GBS_Data/popmap -t 2 -r 0.8 -p 2 -b 1 -s --lnl_lim -10 --fasta --plink --structure
 
 ###The full pipeline
 
